@@ -777,7 +777,7 @@ dd {
 
 /* Balão posicionado mais para cima no canto esquerdo */
 .floating-decor--balloon {
-  top: 36rem; /* Use 'top' para fixar a altura exata a partir do topo da tela */
+  top: 35rem; /* Use 'top' para fixar a altura exata a partir do topo da tela */
   left: 1rem;
   width: clamp(75px, 18vw, 120px);
   animation: flutuarBalao 5s ease-in-out infinite;
