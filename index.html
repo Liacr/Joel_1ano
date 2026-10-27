@@ -1,150 +1,243 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#6f927f">
-  <meta name="description" content="Convite interativo do primeiro aniversário do Joel.">
-  <title>Joel faz 1 | Convite interativo</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#6f927f" />
+    <meta
+      name="description"
+      content="Convite interativo do primeiro aniversário do Joel."
+    />
+    <title>Joel faz 1 | Convite interativo</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="is-closed">
-  <main class="invite-shell">
-    <!-- TELA 1: todo o botão é tocável, inclusive no teclado. -->
-    <section class="cover" aria-label="Capa do convite">
-      <div class="cover__wash" aria-hidden="true"></div>
-      <button class="cover__button" id="abrir-convite" type="button"
-              aria-controls="convite" aria-expanded="false">
-        <span class="cover__eyebrow">Uma aventura está para começar</span>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="is-closed">
+    <main class="invite-shell">
+      <!-- TELA 1: todo o botão é tocável, inclusive no teclado. -->
+      <section class="cover" aria-label="Capa do convite">
+        <div class="cover__wash" aria-hidden="true"></div>
+        <button
+          class="cover__button"
+          id="abrir-convite"
+          type="button"
+          aria-controls="convite"
+          aria-expanded="false"
+        >
+          <span class="cover__eyebrow">Uma aventura está para começar</span>
 
-        <span class="envelope" aria-hidden="true">
-          <span class="envelope__back"></span>
-          <span class="envelope__front"></span>
-          <span class="envelope__flap"></span>
-          <span class="envelope__seal">J</span>
-        </span>
+          <span class="envelope" aria-hidden="true">
+            <span class="envelope__back"></span>
+            <span class="envelope__front"></span>
+            <span class="envelope__flap"></span>
+            <span class="envelope__seal">J</span>
+          </span>
 
-        <span class="cover__title">Toque para abrir o convite<br>de 1 aninho do Joel</span>
-        <span class="cover__hint">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11V5a2 2 0 0 1 4 0v5-2a2 2 0 0 1 4 0v3-1a2 2 0 0 1 4 0v5c0 4-3 7-7 7h-1c-3 0-5-1-7-4l-3-5a2 2 0 0 1 3-2l3 3"/></svg>
-          Toque no envelope
-        </span>
-      </button>
-    </section>
+          <span class="cover__title"
+            >Toque para abrir o convite<br />de 1 aninho do Joel</span
+          >
+          <span class="cover__hint">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M8 11V5a2 2 0 0 1 4 0v5-2a2 2 0 0 1 4 0v3-1a2 2 0 0 1 4 0v5c0 4-3 7-7 7h-1c-3 0-5-1-7-4l-3-5a2 2 0 0 1 3-2l3 3"
+              />
+            </svg>
+            Toque no envelope
+          </span>
+        </button>
+      </section>
 
-    <!-- TELA 2: edite somente os textos entre colchetes. -->
-    <article class="invitation" id="convite" aria-hidden="true" inert>
-      <button class="close-button" id="fechar-convite" type="button" aria-label="Fechar convite e voltar à capa">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
-      </button>
+      <!-- TELA 2: edite somente os textos entre colchetes. -->
+      <article class="invitation" id="convite" aria-hidden="true" inert>
+        <button
+          class="close-button"
+          id="fechar-convite"
+          type="button"
+          aria-label="Fechar convite e voltar à capa"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
 
-      <div class="invitation__sky" aria-hidden="true"></div>
-      <div class="invitation__content">
-        <header class="hero">
-          <p class="hero__kicker">O tempo voa</p>
-          <h1 id="titulo-convite" tabindex="-1"><span>Joel</span> faz 1!</h1>
-          <p class="hero__intro">Nosso pequeno aviador está pronto para a aventura mais fofa de todas — e quer você ao lado dele!</p>
+        <div class="invitation__sky" aria-hidden="true"></div>
+        <div class="invitation__content">
+          <header class="hero">
+            <p class="hero__kicker">O tempo voa</p>
+            <h1 id="titulo-convite" tabindex="-1"><span>Joel</span> faz 1!</h1>
+            <p class="hero__intro">
+              Nosso pequeno aviador está pronto para a aventura mais fofa de
+              todas e quer você ao lado dele!
+            </p>
 
-          <figure class="hero__art">
-            <!-- Substitua o arquivo mantendo este caminho, se desejar. -->
-            <img src="assets/joel-aviador-verde.png" alt="Ilustração do bebê Joel como aviador em um avião de madeira" width="492" height="429">
-          </figure>
-          <p class="hero__call">Prepare o coração para essa viagem!</p>
-        </header>
+            <figure class="hero__art">
+              <!-- Substitua o arquivo mantendo este caminho, se desejar. -->
+              <img
+                src="assets/joel-aviador-verde.png"
+                alt="Ilustração do bebê Joel como aviador em um avião de madeira"
+                width="492"
+                height="429"
+              />
+            </figure>
+            <p class="hero__call">Prepare o coração para essa viagem!</p>
+          </header>
 
-        <section class="flight-details" aria-labelledby="detalhes-titulo">
-          <p class="section-label">Cartão de embarque</p>
-          <h2 id="detalhes-titulo">Detalhes do voo</h2>
-          <dl class="flight-details__list">
-            <div>
-              <dt>Data</dt>
-              <dd>[DATA DA FESTA]</dd>
+          <section class="flight-details" aria-labelledby="detalhes-titulo">
+            <p class="section-label">Cartão de embarque</p>
+            <h2 id="detalhes-titulo">Detalhes do voo</h2>
+            <dl class="flight-details__list">
+              <div>
+                <dt>Data</dt>
+                <dd>Sábado, 07 de Novembro</dd>
+              </div>
+              <div>
+                <dt>Horário</dt>
+                <dd>17:00 horas</dd>
+              </div>
+              <div>
+                <dt>Local</dt>
+                <dd>Av. Atlântica, 20 - Olho D'agua<br /></dd>
+              </div>
+            </dl>
+
+            <!-- Troque o valor de query pelo endereço real, usando + entre as palavras. -->
+            <a
+              class="map-link"
+              href="https://maps.app.goo.gl/X7U9Sb7Gz1KN5pGHA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              <span
+                >Ver localização no Google Maps<small
+                  >Abrir no aplicativo</small
+                ></span
+              >
+              <svg
+                class="map-link__arrow"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7M8 7h9v9" />
+              </svg>
+            </a>
+          </section>
+
+          <details class="message">
+            <summary>
+              <span>Um bilhete do pequeno aviador</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <p>
+              “Eu ainda sou pequenininho, mas o meu sorriso já sabe voar bem
+              alto. Venha comemorar comigo esse dia cheio de amor, brincadeiras
+              e alegria!”
+            </p>
+            <span class="message__signature">Com amor, Joel</span>
+          </details>
+
+          <section class="gifts" aria-labelledby="presentes-titulo">
+            <div class="gifts__heading">
+              <p class="section-label">Se quiser me presentear</p>
+              <h2 id="presentes-titulo">Sugestão de presentes</h2>
+              <p>Arraste para o lado e inspire-se!</p>
             </div>
-            <div>
-              <dt>Horário</dt>
-              <dd>[HORÁRIO]</dd>
-            </div>
-            <div>
-              <dt>Local</dt>
-              <dd>[NOME DO LOCAL]<br><span>[ENDEREÇO COMPLETO]</span></dd>
-            </div>
-          </dl>
 
-          <!-- Troque o valor de query pelo endereço real, usando + entre as palavras. -->
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=ENDERECO+DA+FESTA" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <span>Ver localização no Google Maps<small>Abrir no aplicativo de mapas</small></span>
-            <svg class="map-link__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-          </a>
-        </section>
+            <div class="carousel" data-carousel>
+              <div
+                class="gift-track"
+                tabindex="0"
+                role="region"
+                aria-label="Sugestões de presentes; deslize horizontalmente"
+              >
+                <article class="gift-card gift-card--sage">
+                  <svg viewBox="0 0 80 80" aria-hidden="true">
+                    <path d="M18 38h44v28H18zM26 14h28v24H26z" />
+                    <path d="M18 48h44M40 14v24M12 66h56" />
+                  </svg>
+                  <span class="gift-card__number">01</span>
+                  <h3>Brinquedos educativos</h3>
+                  <p>Para empilhar, imaginar e criar novas aventuras.</p>
+                </article>
+                <article class="gift-card gift-card--blue">
+                  <svg viewBox="0 0 80 80" aria-hidden="true">
+                    <!-- Corpo da camiseta -->
+                    <path d="M26 22h28l12 10-8 14-6-4v24H28V42l-6 4-8-14z" />
+                    <!-- Gola / V -->
+                    <path d="M32 22a8 8 0 0 0 16 0" />
+                  </svg>
+                  <span class="gift-card__number">02</span>
+                  <h3>Roupas</h3>
+                  <p>Tamanho: 2 a 3 anos.</p>
+                </article>
+                <article class="gift-card gift-card--peach">
+                  <svg viewBox="0 0 80 80" aria-hidden="true">
+                    <!-- Corpo do sapato -->
+                    <path d="M18 25H34L48 40L66 45L70 52H18Z" />
 
-        <details class="message">
-          <summary>
-            <span>Um bilhete do pequeno aviador</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </summary>
-          <p>“Eu ainda sou pequenininho, mas o meu sorriso já sabe voar bem alto. Venha comemorar comigo esse dia cheio de amor, brincadeiras e alegria!”</p>
-          <span class="message__signature">Com amor, Joel</span>
-        </details>
+                    <!-- Sola -->
+                    <path d="M18 52H70V59H18Z" />
+                  </svg>
+                  <span class="gift-card__number">03</span>
+                  <h3>Sapato</h3>
+                  <p>Numeração: 22 ou 23.</p>
+                </article>
+              </div>
 
-        <section class="gifts" aria-labelledby="presentes-titulo">
-          <div class="gifts__heading">
-            <p class="section-label">Se quiser me presentear</p>
-            <h2 id="presentes-titulo">Sugestões de brinquedos</h2>
-            <p>Arraste para o lado e inspire-se. O mais importante é a sua presença!</p>
-          </div>
-
-          <div class="carousel" data-carousel>
-            <div class="gift-track" tabindex="0" role="region" aria-label="Sugestões de presentes; deslize horizontalmente">
-              <article class="gift-card gift-card--sage">
-                <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M18 38h44v28H18zM26 14h28v24H26z"/><path d="M18 48h44M40 14v24M12 66h56"/></svg>
-                <span class="gift-card__number">01</span>
-                <h3>Blocos de montar</h3>
-                <p>Para empilhar, imaginar e criar novas aventuras.</p>
-              </article>
-              <article class="gift-card gift-card--blue">
-                <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M15 25c10-5 18-3 25 3 7-6 15-8 25-3v36c-10-5-18-3-25 3-7-6-15-8-25-3V25Z"/><path d="M40 28v36M22 36c5-1 9 0 12 2M46 38c4-2 8-3 13-2"/></svg>
-                <span class="gift-card__number">02</span>
-                <h3>Livrinhos infantis</h3>
-                <p>Histórias curtas, coloridas e próprias para a idade.</p>
-              </article>
-              <article class="gift-card gift-card--peach">
-                <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="25"/><path d="M40 15v50M15 40h50M24 24l32 32M56 24 24 56"/><circle cx="40" cy="40" r="9"/></svg>
-                <span class="gift-card__number">03</span>
-                <h3>Brinquedos de encaixe</h3>
-                <p>Formas e cores para descobrir com as mãozinhas.</p>
-              </article>
-              <article class="gift-card gift-card--cream">
-                <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M18 30h35l10 18v10H18zM53 30V17h10M12 58h57"/><circle cx="27" cy="62" r="7"/><circle cx="54" cy="62" r="7"/></svg>
-                <span class="gift-card__number">04</span>
-                <h3>Carrinho de empurrar</h3>
-                <p>Uma companhia divertida para os primeiros passos.</p>
-              </article>
-            </div>
-
-            <div class="carousel__footer">
-              <div class="carousel__dots" aria-label="Escolher sugestão"></div>
-              <div class="carousel__buttons">
-                <button type="button" data-prev aria-label="Sugestão anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-                <button type="button" data-next aria-label="Próxima sugestão"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+              <div class="carousel__footer">
+                <div
+                  class="carousel__dots"
+                  aria-label="Escolher sugestão"
+                ></div>
+                <div class="carousel__buttons">
+                  <button
+                    type="button"
+                    data-prev
+                    aria-label="Sugestão anterior"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m15 18-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <button type="button" data-next aria-label="Próxima sugestão">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <footer class="invitation__footer">
-          <img src="assets/balao-e-aviao.png" alt="" width="708" height="708" loading="lazy">
-          <p>Esperamos você para voar alto<br>nessa tarde de amor!</p>
-          <strong>Família do Joel</strong>
-        </footer>
-      </div>
-    </article>
-  </main>
+          <footer class="invitation__footer">
+            <img
+              src="assets/joel-aviador.png"
+              alt=""
+              width="708"
+              height="708"
+              loading="lazy"
+            />
+            <p>Esperamos você para voar alto<br />nessa tarde de amor!</p>
+            <strong>Família do Joel</strong>
+          </footer>
+        </div>
+      </article>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

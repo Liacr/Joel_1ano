@@ -22,9 +22,15 @@ function setInvitationOpen(shouldOpen) {
 
   if (shouldOpen) {
     invitation.scrollTop = 0;
-    window.setTimeout(() => invitationTitle.focus({ preventScroll: true }), reducedMotion.matches ? 0 : 260);
+    window.setTimeout(
+      () => invitationTitle.focus({ preventScroll: true }),
+      reducedMotion.matches ? 0 : 260,
+    );
   } else {
-    window.setTimeout(() => openButton.focus({ preventScroll: true }), reducedMotion.matches ? 0 : 260);
+    window.setTimeout(
+      () => openButton.focus({ preventScroll: true }),
+      reducedMotion.matches ? 0 : 260,
+    );
   }
 }
 
@@ -32,7 +38,8 @@ openButton.addEventListener("click", () => setInvitationOpen(true));
 closeButton.addEventListener("click", () => setInvitationOpen(false));
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && body.classList.contains("is-open")) setInvitationOpen(false);
+  if (event.key === "Escape" && body.classList.contains("is-open"))
+    setInvitationOpen(false);
 });
 
 /** Inicia cada carrossel com arraste nativo, botões, pontos e teclado. */
@@ -59,7 +66,7 @@ function setupCarousel(carousel) {
     const safeIndex = Math.max(0, Math.min(index, slides.length - 1));
     track.scrollTo({
       left: slides[safeIndex].offsetLeft - track.offsetLeft,
-      behavior: reducedMotion.matches ? "auto" : "smooth"
+      behavior: reducedMotion.matches ? "auto" : "smooth",
     });
   }
 
@@ -67,31 +74,45 @@ function setupCarousel(carousel) {
     const currentPosition = track.scrollLeft + track.offsetLeft;
     activeIndex = slides.reduce((closest, slide, index) => {
       const currentDistance = Math.abs(slide.offsetLeft - currentPosition);
-      const closestDistance = Math.abs(slides[closest].offsetLeft - currentPosition);
+      const closestDistance = Math.abs(
+        slides[closest].offsetLeft - currentPosition,
+      );
       return currentDistance < closestDistance ? index : closest;
     }, 0);
 
     previousButton.disabled = activeIndex === 0;
     nextButton.disabled = activeIndex === slides.length - 1;
-    dots.forEach((dot, index) => dot.setAttribute("aria-current", String(index === activeIndex)));
+    dots.forEach((dot, index) =>
+      dot.setAttribute("aria-current", String(index === activeIndex)),
+    );
   }
 
   previousButton.addEventListener("click", () => goToSlide(activeIndex - 1));
   nextButton.addEventListener("click", () => goToSlide(activeIndex + 1));
 
   track.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowRight") { event.preventDefault(); goToSlide(activeIndex + 1); }
-    if (event.key === "ArrowLeft") { event.preventDefault(); goToSlide(activeIndex - 1); }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      goToSlide(activeIndex + 1);
+    }
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goToSlide(activeIndex - 1);
+    }
   });
 
   // requestAnimationFrame evita atualizações excessivas durante o gesto.
-  track.addEventListener("scroll", () => {
-    if (scrollFrame) return;
-    scrollFrame = requestAnimationFrame(() => {
-      updateControls();
-      scrollFrame = null;
-    });
-  }, { passive: true });
+  track.addEventListener(
+    "scroll",
+    () => {
+      if (scrollFrame) return;
+      scrollFrame = requestAnimationFrame(() => {
+        updateControls();
+        scrollFrame = null;
+      });
+    },
+    { passive: true },
+  );
 
   window.addEventListener("resize", updateControls, { passive: true });
   updateControls();

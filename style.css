@@ -297,7 +297,7 @@ dd {
 .invitation__sky {
   position: absolute;
   inset: 0 0 auto;
-  height: 38rem;
+  height: 50rem;
   background: url("assets/ceu-aquarela.png") top center / cover no-repeat;
   opacity: 0.48;
   pointer-events: none;
@@ -383,7 +383,7 @@ dd {
 
 .hero__art img {
   width: 100%;
-  aspect-ratio: 1.12;
+  aspect-ratio: 1.18;
   object-fit: cover;
 }
 .hero__call {
@@ -434,10 +434,6 @@ dd {
 .flight-details__list dd {
   font-weight: 800;
   overflow-wrap: anywhere;
-}
-.flight-details__list dd span {
-  font-size: 0.875rem;
-  font-weight: 600;
 }
 
 .map-link {
@@ -595,9 +591,6 @@ dd {
 }
 .gift-card--peach {
   background: var(--peach-300);
-}
-.gift-card--cream {
-  background: var(--cream-100);
 }
 
 .carousel__footer {
