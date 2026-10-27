@@ -769,7 +769,7 @@ dd {
 }
 
 .floating-decor--sun {
-  top: 1.5rem;
+  top: 2rem;
   left: 70%; /* Posiciona a 70% da largura da tela a partir da esquerda */
   width: clamp(65px, 16vw, 105px);
   animation: flutuarSol 6s ease-in-out infinite;
@@ -777,7 +777,7 @@ dd {
 
 /* Balão posicionado mais para cima no canto esquerdo */
 .floating-decor--balloon {
-  top: 38rem; /* Use 'top' para fixar a altura exata a partir do topo da tela */
+  top: 36rem; /* Use 'top' para fixar a altura exata a partir do topo da tela */
   left: 1rem;
   width: clamp(75px, 18vw, 120px);
   animation: flutuarBalao 5s ease-in-out infinite;
