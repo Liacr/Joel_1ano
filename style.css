@@ -303,8 +303,16 @@ dd {
   pointer-events: none;
 
   /* Aplica o fade suave (transição do opaco para o transparente) no final */
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .invitation__content {
@@ -382,7 +390,7 @@ dd {
   border-radius: 48% 52% 42% 58% / 38% 44% 56% 62%;
   background: var(--sage-200);
   box-shadow: var(--shadow-paper);
-  
+
   /* Animação para a moldura inteira flutuar levemente */
   animation: flutuar 4s ease-in-out infinite;
 }
@@ -392,15 +400,16 @@ dd {
   aspect-ratio: 1.18;
   object-fit: cover;
   display: block;
-  
+
   /* Aumenta a imagem interna em 8% (ajuste de 1.05 a 1.10 conforme preferir) */
-  transform: scale(1.08); 
+  transform: scale(1.08);
   transition: transform 0.3s ease;
 }
 
 /* Animação de flutuação suave mantendo a rotação inicial de 1.5deg */
 @keyframes flutuar {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(1.5deg);
   }
   50% {
@@ -614,6 +623,9 @@ dd {
 .gift-card--peach {
   background: var(--peach-300);
 }
+.gift-card--cream {
+  background: var(--cream-100);
+}
 
 .carousel__footer {
   display: flex;
@@ -764,7 +776,7 @@ dd {
 .floating-decor {
   position: absolute;
   pointer-events: none; /* Garante que não bloqueie cliques em botões ou links */
-  z-index: 1;           /* Fica acima do céu, mas atrás dos textos e cartões */
+  z-index: 1; /* Fica acima do céu, mas atrás dos textos e cartões */
   filter: drop-shadow(0 0.8rem 1.2rem rgba(78, 61, 48, 0.12));
 }
 
@@ -785,7 +797,8 @@ dd {
 
 /* Animações suaves de flutuação para mobile */
 @keyframes flutuarSol {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -794,7 +807,8 @@ dd {
 }
 
 @keyframes flutuarBalao {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(-2deg);
   }
   50% {
